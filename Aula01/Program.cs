@@ -14,8 +14,40 @@ namespace POOIAula
                 marca = "Eletrolux",
                 cor = "preto"
             };
+            Fogao fogao2 = new()
+            {
+                bocas = 2,
+                forno = false,
+                tipo = "Embutido",
+                marca = "Consul",
+                cor = "preto"
+            };
+            Fogao fogao3 = new()
+            {
+                bocas = 1,
+                forno = false,
+                tipo = "Embutido",
+                marca = "Schiffer",
+                cor = "Inox"
+            };
+            Fogao fogao4 = new()
+            {
+                bocas = 6,
+                forno = true,
+                tipo = "pé",
+                marca = "Brastemp",
+                cor = "Branco"
+            };
+            Fogao fogao5 = new()
+            {
+                bocas = 4,
+                forno = true,
+                tipo = "pé",
+                marca = "Eletrolux",
+                cor = "Inox"
+            };
 
-            Console.WriteLine(fogao1);
+            //Console.WriteLine(fogao1);
 
             //int nome = 0;
 
