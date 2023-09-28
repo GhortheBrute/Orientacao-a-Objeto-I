@@ -22,7 +22,18 @@ namespace POOIAula02
                 revestimento = "Sem"
             };
             List<Peso> pesos = new();
-            pesos.Add("Teste");
+                pesos.Add(Anilha5);
+                pesos.Add(Haltere10);
+
+            foreach (var elemento in pesos)
+            {
+                Console.WriteLine($"\n{elemento.tipo}");
+                Console.WriteLine(elemento.cor);
+                Console.WriteLine(elemento.kilos);
+                Console.WriteLine(elemento.revestimento);
+            }
+
+            
         }
 
         
