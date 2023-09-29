@@ -1,11 +1,24 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography.X509Certificates;
+using static System.Net.Mime.MediaTypeNames;
+
+        /*Escreva uma classe cujos objetos representam alunos matriculados em uma disciplina.
+         * Cada objeto dessa classe deve guardar os seguintes dados do aluno:
+         * matrícula, nome, 2 notas de prova e 1 nota de trabalho.
+         * Construa os seguintes métodos para esta classe:
+         * métodos construtores, registrar nota de cada prova e trabalho,
+         * calcula a média final do aluno (cada prova tem peso 2,5 e o trabalho tem peso 2).
+         *Teste na main, se atente para o que precisar ser public, private, parametros, retornos.. 
+        */
 
 namespace Aula03
 {
     internal class Program
     {
         public static double notaProva1, notaProva2, notaTrabalho;
-        public static char input;
+        public static string input, nome, disciplina, turma;
+        public static int matricula, classe;
+        public static List<int> matriculados;
         static void Main(string[] args)
         {
             //Console.WriteLine($"Método Somar:\t{Somar(1, 2)}");
@@ -21,43 +34,43 @@ namespace Aula03
                 Console.WriteLine("\n\nDigite qualquer tecla para continuar.");
                 Console.ReadKey();
                 Console.WriteLine("Deseja cadastrar os dados de um novo aluno? S/N");
-                input = Console.ReadKey();
-                if (input == 's')
+                input = Console.ReadKey().ToString().ToLower();
+                if (input.Equals('n'))
                 {
-
+                    break;
                 }
-                
+                Console.Clear();
 
-            }
+            }while(true);
             
         }
         private static void MatricularAluno()
         {
-            int i = 0;
-            do
+            Console.Clear();
+            Console.WriteLine("Informe a Matricula.");
+            matricula = int.Parse(Console.ReadLine());
+            if (matriculados.Contains(matricula))
             {
-                Alunos alunoi = new Alunos();
-
-                Console.WriteLine("Informe a Matricula.");
-                alunoi.matricula = int.Parse(Console.ReadLine());
+                Console.WriteLine("Aluno já matriculado. Digite qualquer tecla para continuar.");
+                Console.ReadKey();
+            }
+            else
+            {
+                matriculados.Add(matricula);
                 Console.WriteLine("Informe o Nome.");
-                alunoi.nome = Console.ReadLine();
+                nome = Console.ReadLine();
                 Console.WriteLine("Informe o número da classe.");
-                alunoi.classe = int.Parse(Console.ReadLine());
-                alunoi.disciplina = Console.ReadLine();
-                alunoi.turma = Console.ReadKey().ToString();
+                classe = int.Parse(Console.ReadLine());
+                Console.WriteLine("Informe a letra da turma.");
+                turma = Console.ReadKey().ToString();
+            }
+            Console.WriteLine("Informe a disciplina.");
+            disciplina = Console.ReadLine().ToLower();
 
-            } while(true);
+            Alunos aluno = new(matricula, nome, disciplina, notaProva1, notaProva2, notaTrabalho);
+
         }
-        /* Escreva uma classe cujos objetos representam alunos matriculados em uma disciplina.
-         * Cada objeto dessa classe deve guardar os seguintes dados do aluno:
-         * matrícula, nome, 2 notas de prova e 1 nota de trabalho.
-         * Construa os seguintes métodos para esta classe:
-         * métodos construtores,
-         * registrar nota de cada prova e trabalho,
-         * calcula a média final do aluno (cada prova tem peso 2,5 e o trabalho tem peso 2).
-         * Teste na main, se atente para o que precisar ser public, private, parametros, retornos.. 
-        */
+        
 
         private static void RegistrarNota() 
         {
