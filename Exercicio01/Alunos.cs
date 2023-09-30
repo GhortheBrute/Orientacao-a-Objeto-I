@@ -26,7 +26,7 @@ namespace Exercicio01
             this.notaProva1 = notaProva1;
             this.notaProva2 = notaProva2;
             this.notaTrabalho = notaTrabalho;
-            this.media = Math.Round(((notaProva1 + notaProva2) * 2.5D) / 6.5D, 2);
+            this.media = Math.Round(((notaProva1 + notaProva2) * 2.5D) / 7, 2);
         }
 
 
