@@ -65,6 +65,7 @@ namespace Exercicio01
                 Console.WriteLine("Aluno já matriculado.\n" +
                     $"Matrícula:\t{buscaMatricula.matricula}\n" +
                     $"Nome:\t\t{buscaMatricula.nome}\nDigite qualquer tecla para continuar.");
+                nome = buscaMatricula.nome;
                 Console.ReadKey();
             }
             else
@@ -73,8 +74,16 @@ namespace Exercicio01
                 Console.WriteLine("Informe o Nome.");
                 nome = Console.ReadLine();
             }
-            Console.WriteLine("\nInforme a disciplina.");
-            disciplina = Console.ReadLine().ToLower();
+            do
+            {
+                Console.WriteLine("\nInforme a disciplina.");
+                disciplina = Console.ReadLine().ToLower();
+                var buscaDisciplina = alunos.FirstOrDefault(b => b.disciplina == disciplina);
+                if (buscaDisciplina == null) break;
+                Console.WriteLine("Disciplina já cadastrada. Por favor informe nova disciplina.");
+                Console.ReadKey();
+            } while (true);
+            
             Console.WriteLine("Informe a Nota da Prova 1.");
             notaProva1 = double.Parse(Console.ReadLine());
             Console.WriteLine("Informe a Nota da Prova 2.");
