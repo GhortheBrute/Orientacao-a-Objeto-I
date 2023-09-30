@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aula03
+namespace Exercicio01
 {
     internal class Alunos
     {
@@ -29,7 +29,7 @@ namespace Aula03
             this.media = Math.Round(((notaProva1 + notaProva2) * 2.5D) / 6.5D, 2);
         }
 
-        
-        
+
+
     }
 }
