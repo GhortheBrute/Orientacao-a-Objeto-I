@@ -13,5 +13,9 @@ namespace Exercicio02
 {
     internal class Pessoa
     {
+        public int matricula;
+        public string nome;
+        public int idade;
+        public string genero;
     }
 }

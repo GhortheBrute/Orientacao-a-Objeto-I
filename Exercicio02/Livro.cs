@@ -12,5 +12,10 @@ namespace Exercicio02
 {
     internal class Livro
     {
+        public int codigo;
+        public string nome;
+        public string genero;
+        public string autor;
+        public string editora;
     }
 }
