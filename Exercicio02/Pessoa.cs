@@ -13,9 +13,17 @@ namespace Exercicio02
 {
     internal class Pessoa
     {
-        public int matricula;
-        public string nome;
-        public int idade;
-        public string genero;
+        public int Matricula { get;  }
+        public string Nome { get;  }
+        public int Idade { get;  }
+        public string Genero { get;  }
+
+        public Pessoa(int matricula, string nome, int idade, string genero)
+        {
+            this.Matricula = matricula;
+            this.Nome = nome;
+            this.Idade = idade;
+            this.Genero = genero;
+        }
     }
 }

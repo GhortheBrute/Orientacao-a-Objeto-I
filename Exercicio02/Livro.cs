@@ -10,12 +10,34 @@ using System.Threading.Tasks;
  */
 namespace Exercicio02
 {
-    internal class Livro
+    public class Livro
     {
-        public int codigo;
-        public string nome;
-        public string genero;
-        public string autor;
-        public string editora;
+        public int Codigo { get;  }
+        public string Nome { get; }
+        public string Genero { get;  }
+        public string Autor { get;  }
+        public string Editora { get; }
+
+        public Livro(int codigo, string nome, string genero, string autor, string editora)
+        {
+            this.Codigo = codigo;
+            this.Nome = nome;
+            this.Genero = genero;
+            this.Autor = autor;
+            this.Editora = editora;
+        }
+
+        public void ImprimeLivro()
+        {
+            foreach(var item in Livro)
+            {
+                Console.WriteLine($"Código:\t{item.Codigo}\n" +
+                    $"Título:\t{item.nome}"+
+                    $"Autor:\t{item.autor}" +
+                    $"Editora:\t{item.editora}" +
+                    $"Gênero:\t{item.genero}");
+                
+            }
+        }
     }
 }

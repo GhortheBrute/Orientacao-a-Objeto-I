@@ -29,72 +29,22 @@ namespace Exercicio02
 {
 	internal class Program
 	{
-        public static List<Emprestimo> emprestimos = new ();
-        public static List<Pessoa> pessoas = new();
-        public static List<Livro> livros = new();
-        public static ConsoleKeyInfo input;
-        public static int codCliente, codLivro;
-		static void Main(string[] args)
-		{
-            AdicionarManual();
-            do
-            {
-                //emprestar livro
-                do
-                {
-                    //confirma código do cliente
-                    Console.WriteLine("Digite o código do cliente.");
-                    codCliente = int.Parse(Console.ReadLine());
-                    if (codCliente == 1 || codCliente == 2) break;
-                    Console.WriteLine("Cliente não cadastrado.\nPressione qualquer tecla para continuar.");
-                    Console.ReadKey();
-                    Console.Clear();
-                } while (true);
-
-                do
-                {
-                    Console.WriteLine("Informe o código do livro.");
-                    codLivro = int.Parse(Console.ReadLine());
-                    if (codLivro < 1 || codLivro > 5)
-                    {
-                        Console.WriteLine("Livro não cadastrado.\nPressione qualquer tecla para continuar.");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-                    else
-                    {
-                        if (AchaLivro(codLivro))
-                        {
-                            Console.WriteLine("Livro já emprestado. Deseja emprestar outro livro.? (S/N)");
-                            input = Console.ReadKey();
-                            if (input.Key = ConsoleKey.N) break;
-                        }
-                        
-                        break;
-                    }
-                    
-                } while (true);
-
-                Console.WriteLine("Deseja realizar um novo empréstimo? (S/N)");
-                input = Console.ReadKey();
-                if (input.Key == ConsoleKey.N) break;
-                
-            } while (true);
-
-
-            
-
-
-            
+        static void Main(string[] args)
+        {
+            Pessoa pessoa1 = new(1, "Patricia", 23, "feminino");
+            Pessoa pessoa2 = new(2, "Marcos", 43, "masculino");
+            Livro livro1 = new(1, "O Guia do Mochileiro das Galáxias Vol 1", "Ficção", "Douglas Adams", "Sextante");
+            Livro livro2 = new(2, "O Senhor dos Anéis: O Retorno do Rei", "Aventura", "J R R Tolkien", "Livraria Martins Fontes Editora LTDA");
+            Livro livro3 = new(3, "HENCH", "Aventura", "Natalie Zina Walschots", "Melhoramentos");
+            Livro livro4 = new(4, "Um amor de gato", "Romance", "Melinda Metz", "Record");
+            Livro livro5 = new(5, "O Diário de Hass Vol 1", "Ficção", "H F Pessoa", "H F Pessoa");
+            Emprestimo emprestimo1 = new(livro5, pessoa2, new DateTime(2023, 09, 22), new DateTime(2023, 10, 01), new DateTime(2023, 10, 01));
+            Emprestimo emprestimo2 = new(livro4, pessoa1, new DateTime(2023, 09, 28), new DateTime(2023, 10, 05));
+            ImprimeLivro();
         }
         
-        static bool AchaLivro(int codLivro)
-        {
-            var achaLivro = emprestimos.FirstOrDefault(x => x.livro == codLivro);
-            return achaLivro != null;
-        }
 
-        static void AdicionarManual()
+        /*static void AdicionarManual()
         {
             Pessoa pessoa1 = new()
             {
@@ -111,8 +61,7 @@ namespace Exercicio02
                 genero = "masculino",
                 idade = 43
             };
-            pessoas.Add(pessoa1);
-            pessoas.Add(pessoa2);
+
 
             Livro livro1 = new()
             {
@@ -158,11 +107,6 @@ namespace Exercicio02
                 editora = "H F Pessoa",
                 genero = "Ficção"
             };
-            livros.Add(livro1);
-            livros.Add(livro2);
-            livros.Add(livro3); 
-            livros.Add(livro4);
-            livros.Add(livro5);
 
             Emprestimo emprestimo1 = new()
             {
@@ -209,12 +153,8 @@ namespace Exercicio02
                 dataEstimadaEstorno = new DateOnly(2023, 10, 11),
 
             };
-            emprestimos.Add(emprestimo1);
-            emprestimos.Add(emprestimo2);
-            emprestimos.Add(emprestimo3);
-            emprestimos.Add(emprestimo4);
-            emprestimos.Add(emprestimo5);
-        }
 
-	}
+        }*/
+
+    }
 }
