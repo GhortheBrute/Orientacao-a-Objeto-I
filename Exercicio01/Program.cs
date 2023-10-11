@@ -1,8 +1,4 @@
-﻿using System.Runtime.Intrinsics.X86;
-using System.Security.Cryptography.X509Certificates;
-using static System.Net.Mime.MediaTypeNames;
-
-/*Escreva uma classe cujos objetos representam alunos matriculados em uma disciplina.
+﻿/*Escreva uma classe cujos objetos representam alunos matriculados em uma disciplina.
  * Cada objeto dessa classe deve guardar os seguintes dados do aluno:
  * matrícula, nome, 2 notas de prova e 1 nota de trabalho.
  * Construa os seguintes métodos para esta classe:
@@ -83,7 +79,7 @@ namespace Exercicio01
                 Console.WriteLine("Disciplina já cadastrada. Por favor informe nova disciplina.");
                 Console.ReadKey();
             } while (true);
-            
+
             Console.WriteLine("Informe a Nota da Prova 1.");
             notaProva1 = double.Parse(Console.ReadLine());
             Console.WriteLine("Informe a Nota da Prova 2.");
